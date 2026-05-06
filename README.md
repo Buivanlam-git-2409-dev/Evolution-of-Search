@@ -1,10 +1,10 @@
-# 🔍 Evolution of Search: From Keyword-based to Semantic Search
+#  Evolution of Search: From Keyword-based to Semantic Search
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## 📝 Mô Tả Dự Án
+##  Mô Tả Dự Án
 
 Hệ thống so sánh **trực tiếp** giữa 2 phương pháp tìm kiếm hiện đại:
 - **Baseline**: TF-IDF + Cosine Similarity (truyền thống, dựa trên từ khóa)
@@ -17,28 +17,28 @@ Giao diện Streamlit tương tác cho phép so sánh kết quả 2 phương ph�
 
 ---
 
-## ✨ Tính Năng Chính
+##  Tính Năng Chính
 
-✅ **Tiền xử lý văn bản chuyên biệt**
+**Tiền xử lý văn bản chuyên biệt**
 - Lowercase, Regex cleanup, Stopwords removal
 - Tối ưu hóa cho cả TF-IDF và Semantic embeddings
 
-✅ **2 phương pháp tìm kiếm song song**
+**2 phương pháp tìm kiếm song song**
 - TF-IDF: Nhanh (~3ms), tìm từ khóa chính xác
 - Semantic: Hiểu ngữ cảnh (~12ms), xử lý paraphrases
 
-✅ **Vector search được tối ưu hóa**
+**Vector search được tối ưu hóa**
 - Faiss integration cho ANN (Approximate Nearest Neighbor) search
 - Fallback NumPy nếu chưa cài Faiss
 
-✅ **UI Streamlit chuyên nghiệp**
+**UI Streamlit chuyên nghiệp**
 - 2 tab kết quả so sánh real-time
 - Metrics display: inference time, score
 - Hướng dẫn ChromaDB cho production
 
 ---
 
-## 🛠️ Công Nghệ Sử Dụng
+##  Công Nghệ Sử Dụng
 
 | Công Nghệ | Phiên Bản | Mục Đích |
 |-----------|---------|---------|
@@ -51,7 +51,7 @@ Giao diện Streamlit tương tác cho phép so sánh kết quả 2 phương ph�
 
 ---
 
-## 📦 Cài Đặt & Chạy
+## Cài Đặt & Chạy
 
 ### 1. Clone / Download Dự Án
 ```bash
@@ -78,7 +78,7 @@ streamlit run app.py
 
 ---
 
-## 💡 Cách Sử Dụng
+## Cách Sử Dụng
 
 1. **Chọn cấu hình** (sidebar bên trái):
    - Số passages: 1,000 - 2,000
@@ -94,7 +94,7 @@ streamlit run app.py
 
 ---
 
-## 📁 Cấu Trúc Dự Án
+## Cấu Trúc Dự Án
 
 ```
 Text Retrieval/
@@ -117,7 +117,7 @@ Text Retrieval/
 
 ---
 
-## 🧠 Cách Hoạt Động
+## Cách Hoạt Động
 
 ### TF-IDF (Baseline)
 ```
@@ -141,7 +141,7 @@ Text Retrieval/
 
 ---
 
-## 📊 Benchmark Performance
+## Benchmark Performance
 
 **Trên 1,500 passages:**
 
@@ -164,7 +164,7 @@ Text Retrieval/
 | **Semantic** | "Smart studying guide" (0.91) | "Memory improvement tips" (0.88) |
 
 
-## 🔮 Hướng Phát Triển Tương Lai
+## Hướng Phát Triển Tương Lai
 
 1. **ChromaDB Integration** → Persistent vector storage cho production
 2. **GPU Acceleration** → CUDA support (5-10x speedup)
@@ -176,7 +176,7 @@ Text Retrieval/
 
 ---
 
-## 📚 Tài Liệu Tham Khảo
+## Tài Liệu Tham Khảo
 
 - [Sentence-Transformers](https://www.sbert.net/)
 - [Faiss Documentation](https://github.com/facebookresearch/faiss)
@@ -186,7 +186,7 @@ Text Retrieval/
 
 ---
 
-## 📄 License
+## License
 
 MIT License - Tự do sử dụng, sửa đổi, phân phối
 
