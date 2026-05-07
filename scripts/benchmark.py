@@ -31,7 +31,7 @@ def benchmark_search(
     results = []
 
     for sample_size in sample_sizes:
-        print(f"\n🔄 Benchmark với sample_size={sample_size}...")
+        print(f"\nBenchmark với sample_size={sample_size}...")
 
         try:
             engine = SearchEngine(sample_size=sample_size, use_faiss=True)
@@ -72,18 +72,18 @@ def benchmark_search(
             }
             results.append(result)
 
-            print(f"  ✅ TF-IDF avg: {avg_tfidf:.3f} ms")
-            print(f"  ✅ Semantic avg: {avg_semantic:.3f} ms")
-            print(f"  ✅ Speedup: {avg_tfidf / avg_semantic:.2f}x")
+            print(f"  TF-IDF avg: {avg_tfidf:.3f} ms")
+            print(f"  Semantic avg: {avg_semantic:.3f} ms")
+            print(f"  Speedup: {avg_tfidf / avg_semantic:.2f}x")
 
         except Exception as e:
-            print(f"  ❌ Lỗi: {e}")
+            print(f"Lỗi: {e}")
 
     # Lưu kết quả
     with open(output_path, "w") as f:
         json.dump(results, f, indent=2)
 
-    print(f"\n\n📊 Benchmark Summary:")
+    print(f"\n\nBenchmark Summary:")
     print(f"{'Sample Size':<15} {'TF-IDF (ms)':<15} {'Semantic (ms)':<15} {'Speedup':<10} {'Backend':<10}")
     print("-" * 70)
     for r in results:
@@ -92,7 +92,7 @@ def benchmark_search(
             f"{r['speedup']:<10} {r['backend']:<10}"
         )
 
-    print(f"\n✅ Kết quả đã lưu tại: {output_path}")
+    print(f"\nKết quả đã lưu tại: {output_path}")
 
 
 if __name__ == "__main__":

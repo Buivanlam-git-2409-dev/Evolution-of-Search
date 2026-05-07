@@ -3,7 +3,7 @@
 import streamlit as st
 from typing import List
 
-from engine import SearchResult
+from core.schemas import SearchResult
 
 
 def render_search_result(result: SearchResult) -> None:
@@ -69,7 +69,7 @@ def render_model_info(model_name: str, use_faiss: bool, num_docs: int) -> None:
         use_faiss: Có dùng FAISS không
         num_docs: Số documents
     """
-    with st.expander("📋 Model Information"):
+    with st.expander("Model Information"):
         st.write(f"**Embedding Model:** {model_name}")
-        st.write(f"**FAISS:** {'✅ Enabled' if use_faiss else '❌ Disabled'}")
+        st.write(f"**FAISS:** {'Enabled' if use_faiss else 'Disabled'}")
         st.write(f"**Documents:** {num_docs}")

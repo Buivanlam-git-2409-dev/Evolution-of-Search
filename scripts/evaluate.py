@@ -13,11 +13,11 @@ def evaluate_search(queries: list[str], top_k: int = 5) -> None:
         queries: Danh sách các queries để kiểm tra
         top_k: Số kết quả cần trả về
     """
-    print("🔄 Đang khởi tạo engine...")
+    print("Đang khởi tạo engine...")
     engine = SearchEngine(sample_size=1500, use_faiss=True)
     engine.prepare()
 
-    print(f"\n📊 Đánh giá với {len(queries)} queries (top_k={top_k}):\n")
+    print(f"\nĐánh giá với {len(queries)} queries (top_k={top_k}):\n")
 
     total_tfidf_time = 0.0
     total_semantic_time = 0.0
@@ -43,9 +43,9 @@ def evaluate_search(queries: list[str], top_k: int = 5) -> None:
             print()
 
         except Exception as e:
-            print(f"  ❌ Lỗi: {e}\n")
+            print(f"Lỗi: {e}\n")
 
-    print(f"\n📈 Summary:")
+    print(f"\nSummary:")
     print(f"  - Total TF-IDF time: {total_tfidf_time:.2f} ms")
     print(f"  - Total Semantic time: {total_semantic_time:.2f} ms")
     print(f"  - Avg TF-IDF time: {total_tfidf_time/len(queries):.2f} ms")

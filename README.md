@@ -55,7 +55,7 @@ Giao diện Streamlit tương tác cho phép so sánh kết quả 2 phương ph�
 
 ### 1. Clone / Download Dự Án
 ```bash
-cd "C:\Users\fptsh\Downloads\My Project\Text Retrieval"
+cd "C:\Users\fptsh\Downloads\Test app\project\Evolution-of-Search"
 ```
 
 ### 2. Tạo Virtual Environment (Khuyến Nghị)
@@ -72,7 +72,7 @@ pip install -r requirements.txt
 
 ### 4. Chạy Ứng Dụng
 ```bash
-streamlit run app.py
+streamlit run app/app.py
 ```
 Ứng dụng sẽ mở tự động tại: `http://localhost:8501`
 
@@ -97,24 +97,34 @@ streamlit run app.py
 ## Cấu Trúc Dự Án
 
 ```
-Text Retrieval/
-├── app.py              # Streamlit UI (entry point)
-├── engine.py           # SearchEngine + TextProcessor logic
+Evolution-of-Search/
+├── app/
+│   ├── app.py          # Streamlit UI (entry point)
+│   ├── components.py   # UI components
+│   └── utils.py        # Helper functions
+├── core/
+│   ├── engine.py       # SearchEngine coordination
+│   ├── processor.py    # TextProcessor logic
+│   ├── retrievers.py   # TF-IDF & Semantic retrievers
+│   └── schemas.py      # Data structures (SearchResult)
+├── data/               # Thư mục chứa dữ liệu (raw/processed)
+├── scripts/            # Scripts benchmark, build index, v.v.
 ├── requirements.txt    # Phụ thuộc
 └── README.md           # Tài liệu này
 ```
 
 ### Modules Chính
 
-**`engine.py`**:
-- `TextProcessor`: Tiền xử lý văn bản (lowercase, regex, stopwords)
-- `SearchEngine`: Xây dựng & truy vấn TF-IDF + Semantic indexes
-- `SearchResult`: Data class cho kết quả tìm kiếm
+**`core/`**:
+- `processor.py`: `TextProcessor` - Tiền xử lý văn bản chuyên biệt.
+- `retrievers.py`: `TFIDFRetriever` & `SemanticRetriever` - Xử lý vectorization và search.
+- `engine.py`: `SearchEngine` - Lớp trung gian điều phối truy vấn cho cả 2 method.
+- `schemas.py`: Định nghĩa `SearchResult` và các type hints.
 
-**`app.py`**:
-- UI Streamlit: 2 tabs, metrics, configuration sidebar
-- Caching heavy resources (model + dataset)
-
+**`app/`**:
+- `app.py`: UI chính Streamlit, quản lý state và caching.
+- `components.py`: Các thành phần giao diện (metric cards, results list).
+- `utils.py`: Tiện ích format thời gian và dữ liệu hiển thị.
 ---
 
 ## Cách Hoạt Động

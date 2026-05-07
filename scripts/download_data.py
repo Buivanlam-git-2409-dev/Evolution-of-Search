@@ -16,7 +16,7 @@ def download_ms_marco(sample_size: int = 1500, output_dir: str = "data/raw") -> 
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
-    print(f"🔄 Đang tải MS MARCO dataset ({sample_size} samples)...")
+    print(f"Đang tải MS MARCO dataset ({sample_size} samples)...")
 
     try:
         # Tải từ Hugging Face
@@ -28,14 +28,14 @@ def download_ms_marco(sample_size: int = 1500, output_dir: str = "data/raw") -> 
 
         # Lưu dataset
         dataset.save_to_disk(str(output_path / "ms_marco"))
-        print(f"✅ Dataset đã lưu tại: {output_path / 'ms_marco'}")
+        print(f"Dataset đã lưu tại: {output_path / 'ms_marco'}")
 
-        print(f"📊 Dataset info:")
+        print(f"Dataset info:")
         print(f"   - Samples: {len(dataset)}")
         print(f"   - Columns: {dataset.column_names}")
 
     except Exception as e:
-        print(f"❌ Lỗi khi tải dataset: {e}")
+        print(f"Lỗi khi tải dataset: {e}")
         sys.exit(1)
 
 

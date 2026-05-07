@@ -45,13 +45,13 @@ def get_performance_label(speedup: float) -> str:
         Performance label (Slower, Similar, Faster, Much Faster)
     """
     if speedup < 0.9:
-        return "⚠️ Slower"
+        return "Slower"
     elif speedup < 1.1:
-        return "≈ Similar"
+        return "Similar"
     elif speedup < 2.0:
-        return "✅ Faster"
+        return "Faster"
     else:
-        return "🚀 Much Faster"
+        return "Much Faster"
 
 
 def truncate_text(text: str, max_length: int = 100) -> str:
